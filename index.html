@@ -5,7 +5,7 @@ Halleluia Zeyohannes, UMass Lowell Computer Science,
 halleluia_zeyohannes@student.uml.edu
 Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by HZ on 21 Dec 2022 at 3PM
+updated by HZ on 21 Dec 2022 at 2PM
 
 Purpose: Provide basic structure for the website and Scrabble game.
 -->
@@ -29,22 +29,59 @@ Purpose: Provide basic structure for the website and Scrabble game.
                     <ul>
                         <li>Your word must match one in the game's dictionary.</li>
                         <li>Your titles must be placed in contiguous spaces on the board.</li>
+                        <li>If using a blank title, you'll be asked to decide what letter it represents.</li>
                     </ul>
                     <li>Your score will be the sum of the values on the titles you play. If a title is placed on a <span>DOUBLE WORD</span> space, the base value of a valid word will be doubled and added to your score.</li>
                 </ol>
             </div>
             <br>
             <br>
-            <!--Total Score, Highest Score for a Word, Highest Total Score, Number of Tiles left, and Current Word will be displayed here-->
-            <div class="scoreboard"></div>
+            <!--Overall, game stats like total score and remaining tiles display here-->
+            <div class="scoreboard">
+                <h4 class="label">Word: </h4>
+                <h4 id="current_word"></h4>
+
+                <h4 class="label">Word Score: </h4>
+                <h4 id="current_word_score"></h4>
+
+                <h4 class="label">Total Score: </h4>
+                <h4 id="total_score"></h4>
+
+                <h4 class="label"> Tiles Left: </h4>
+                <h4 id="tiles_left"></h4>
+            </div>
+
             <!--The row from Scrabble will be here-->
-            <div class="game_board"></div>
+            <div class="game_board">
+                <img class="droppable" id="board_tile1" src="img/cell.png">
+                <img class="droppable" id="board_tile2" src="img/double_word_cell.png">
+                <img class="droppable" id="board_tile3" src="img/cell.png">
+                <img class="droppable" id="board_tile4" src="img/cell.png">
+                <img class="droppable" id="board_tile5" src="img/cell.png">
+                <img class="droppable" id="board_tile6" src="img/double_word_cell.png">
+                <img class="droppable" id="board_tile7" src="img/cell.png">
+            </div>
+
             <!--Submit Word, Restart Game, Clear Board Buttons will appear here-->
-            <div class="game_buttons"></div>
+            <div class="game_buttons">
+                <input id="submit_word" type="button" value="Submit Word" onclick="">
+                <input id="clear_board" type="button" value="Clear Board" onclick="">
+                <input id="restart_game" type="button" value="Restart Game" onlick="">
+            </div>
             <!--Any generated error messages will appear here-->
             <div class="error_msg"></div>
+
             <!--Tile rack containing current round's tiles appear here-->
-            <div class="tile_rack"></div>
+            <div class="tile_rack">
+                <!--img src's change with each round, and need to be dragged-->
+                <img src="" id="letter1" class="draggable">
+                <img src="" id="letter2" class="draggable">
+                <img src="" id="letter3" class="draggable">
+                <img src="" id="letter4" class="draggable">
+                <img src="" id="letter5" class="draggable">
+                <img src="" id="letter6" class="draggable">
+                <img src="" id="letter7" class="draggable">
+            </div>
         </div>
 
         <!--Includes jQuery-->

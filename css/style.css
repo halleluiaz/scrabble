@@ -5,7 +5,7 @@ Halleluia Zeyohannes, UMass Lowell Computer Science,
 halleluia_zeyohannes@student.uml.edu
 Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by HZ on 21 Dec 2022 at 5PM
+updated by HZ on 21 Dec 2022 at 2PM
 
 Purpose: Style the elements of index.html to increase readability and ease of use
 of the site.
@@ -37,4 +37,26 @@ h1 {
 
 h2 {
     text-decoration: underline;
+}
+
+.scoreboard {
+    text-align: center;
+}
+
+.scoreboard h4 {
+    display: inline-block;
+}
+
+.game_board {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.tile_rack {
+    background-image: url("../img/rack.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 800px;
+    margin: auto;
+    height: 182px;
+    /*width: 640px;*/
 }
