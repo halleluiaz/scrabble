@@ -1,0 +1,60 @@
+<!--
+File: index.html
+GUI Assignment: Implementing a Bit of Scrabble with Drag-and-Drop
+Halleluia Zeyohannes, UMass Lowell Computer Science, 
+halleluia_zeyohannes@student.uml.edu
+Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
+copied or excerpted for educational purposes with credit to the author.
+updated by HZ on 21 Dec 2022 at 3PM
+
+Purpose: Provide basic structure for the website and Scrabble game.
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Mini Scrabble</title>
+        <!--jQuery UI CSS file-->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="introduction">
+                <h1>Welcome to Mini Scrabble!</h1>
+                <h2>Rules</h2>
+                <ol>
+                    <li>Drag tiles to the board and spell out a word.</li>
+                    <ul>
+                        <li>Your word must match one in the game's dictionary.</li>
+                        <li>Your titles must be placed in contiguous spaces on the board.</li>
+                    </ul>
+                    <li>Your score will be the sum of the values on the titles you play. If a title is placed on a <span>DOUBLE WORD</span> space, the base value of a valid word will be doubled and added to your score.</li>
+                </ol>
+            </div>
+            <br>
+            <br>
+            <!--Total Score, Highest Score for a Word, Highest Total Score, Number of Tiles left, and Current Word will be displayed here-->
+            <div class="scoreboard"></div>
+            <!--The row from Scrabble will be here-->
+            <div class="game_board"></div>
+            <!--Submit Word, Restart Game, Clear Board Buttons will appear here-->
+            <div class="game_buttons"></div>
+            <!--Any generated error messages will appear here-->
+            <div class="error_msg"></div>
+            <!--Tile rack containing current round's tiles appear here-->
+            <div class="tile_rack"></div>
+        </div>
+
+        <!--Includes jQuery-->
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+        <!--Includes jQuery Validation Plugin-->
+        <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
+        <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+
+        <!--Includes jQuery UI Interactions for Drag and Drop>-->
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    </body>
+</html>
