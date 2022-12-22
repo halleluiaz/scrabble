@@ -5,7 +5,7 @@ Halleluia Zeyohannes, UMass Lowell Computer Science,
 halleluia_zeyohannes@student.uml.edu
 Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by HZ on 21 Dec 2022 at 2PM
+updated by HZ on 21 Dec 2022 at 11PM
 
 Purpose: Provide basic structure for the website and Scrabble game.
 -->
@@ -22,6 +22,7 @@ Purpose: Provide basic structure for the website and Scrabble game.
     <body>
         <div class="wrapper">
             <div class="introduction">
+                <!--Visual to make site look better, but all rules do not apply yet-->
                 <h1>Welcome to Mini Scrabble!</h1>
                 <h2>Rules</h2>
                 <ol>
@@ -69,7 +70,7 @@ Purpose: Provide basic structure for the website and Scrabble game.
                 <input id="restart_game" type="button" value="Restart Game" onclick="restart_game();">
             </div>
             <!--Any generated error messages will appear here-->
-            <div class="error_msg"></div>
+            <div class="error_msg" id="error_msg"></div>
 
             <!--Tile rack containing current round's tiles appear here-->
             <div class="tile_rack droppable">
@@ -96,7 +97,6 @@ Purpose: Provide basic structure for the website and Scrabble game.
         
         <script>
             $(document).ready(function() {
-                default_stats();
                 random_tiles();
                 droppable_slots();
             });

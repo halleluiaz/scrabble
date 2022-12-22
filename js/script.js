@@ -5,9 +5,10 @@ Halleluia Zeyohannes, UMass Lowell Computer Science,
 halleluia_zeyohannes@student.uml.edu
 Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by HZ on 21 Dec 2022 at 2PM
+updated by HZ on 21 Dec 2022 at 11PM
 
-Purpose:
+Purpose: Implements the functions needed to play with a line of Scrabble and uses an associative array
+as the data structure to contain information relating to the tiles and the letter distribution.
 */
 "use strict";
 
@@ -55,10 +56,11 @@ var current_word = {           // keep track of letters placed, the sum of their
     final_value: 0
 }
 
-// var hand = [];
+ var board = ['', '', '', '', '', '', ''];      // will contain the letters placed onto the board in corresponding positions
 
 // random_tiles() generates 7 random tiles from the "bag" and makes them draggable. They can only be dropped
 // in an accepting droppable target otherwise they bounce back to where they were.
+// Referenced: https://jqueryui.com/draggable/ and https://jqueryui.com/droppable/#revert
 function random_tiles() {
     var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_";
     var num = -1;
@@ -74,7 +76,7 @@ function random_tiles() {
             num = Math.floor(Math.random() * 27);
             letter = alphabet.charAt(num);
         }
-        document.getElementById(img_id).setAttribute("value", letter);
+        document.getElementById(img_id).setAttribute("value", letter);      // keep track of the letter so that we can update current_word object later as needed
         document.getElementById(img_id).src = ScrabbleTiles[letter].image;
         ScrabbleTiles[letter].number_remaining--;
         console.log(ScrabbleTiles[letter].number_remaining + " tiles left");
@@ -85,26 +87,36 @@ function random_tiles() {
 }
 
 // droppable_slots() creates the droppable targets(board slots and rack) for the tiles
+// Referenced: https://jqueryui.com/droppable/#default
 function droppable_slots() {
-    $(".droppable").droppable({
-        accept: "img#draggable",
-        drop: function( event, ui) {
-            // EDIT HERE
+    $("#board_tile1").droppable({
+        accept: "img.draggable",
+        drop: function( event, ui ) {
+            var letter = ui.draggable.prop("value");    // get dropped letter
+            console.log(letter);
+            board[0] = letter;                          // put it into board[] to keep track of the word
+            //update_word(board);
+        },
+        out: function( event, ui ) {
+            var letter = ui.draggable.prop("value");
         }
     })
 }
 
-// updates the display above the board for the word based on what the user has placed on it
-function update_word() {
-
+// update_word() will update the display above the board for the word based on what the user has placed on it
+function update_word(board_array) {
+    console.log("to implement");
 }
 
+// submit_word() will take the tiles in order if there are no gaps and update the scores and # of tiles remaining.
 function submit_word(){
     console.log("to implement");
+    document.getElementById("error_msg").textContent = "Submit Word not implemented yet.";
 }
 
 function clear_board() {
     console.log("to implement");
+    document.getElementById("error_msg").textContent = "Clear Board not implemented yet.";
 }
 
 // restart game by reloading the page
