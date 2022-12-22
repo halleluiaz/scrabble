@@ -39,6 +39,9 @@ h2 {
     text-decoration: underline;
 }
 
+h4.label:not(:first-child) {
+    margin-left: 100px;
+}
 .scoreboard {
     text-align: center;
 }

@@ -39,16 +39,16 @@ Purpose: Provide basic structure for the website and Scrabble game.
             <!--Overall, game stats like total score and remaining tiles display here-->
             <div class="scoreboard">
                 <h4 class="label">Word: </h4>
-                <h4 id="current_word"></h4>
+                <h4 id="current_word">-</h4>
 
                 <h4 class="label">Word Score: </h4>
-                <h4 id="current_word_score"></h4>
+                <h4 id="current_word_score">0</h4>
 
                 <h4 class="label">Total Score: </h4>
-                <h4 id="total_score"></h4>
+                <h4 id="total_score">0</h4>
 
                 <h4 class="label"> Tiles Left: </h4>
-                <h4 id="tiles_left"></h4>
+                <h4 id="tiles_left">100</h4>
             </div>
 
             <!--The row from Scrabble will be here-->
@@ -96,6 +96,7 @@ Purpose: Provide basic structure for the website and Scrabble game.
         
         <script>
             $(document).ready(function() {
+                default_stats();
                 random_tiles();
                 droppable_slots();
             });
