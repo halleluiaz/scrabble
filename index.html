@@ -64,23 +64,23 @@ Purpose: Provide basic structure for the website and Scrabble game.
 
             <!--Submit Word, Restart Game, Clear Board Buttons will appear here-->
             <div class="game_buttons">
-                <input id="submit_word" type="button" value="Submit Word" onclick="">
-                <input id="clear_board" type="button" value="Clear Board" onclick="">
-                <input id="restart_game" type="button" value="Restart Game" onlick="">
+                <input id="submit_word" type="button" value="Submit Word" onclick="submit_word();">
+                <input id="clear_board" type="button" value="Clear Board" onclick="clear_board();">
+                <input id="restart_game" type="button" value="Restart Game" onclick="restart_game();">
             </div>
             <!--Any generated error messages will appear here-->
             <div class="error_msg"></div>
 
             <!--Tile rack containing current round's tiles appear here-->
-            <div class="tile_rack">
+            <div class="tile_rack droppable">
                 <!--img src's change with each round, and need to be dragged-->
-                <img src="" id="letter1" class="draggable">
-                <img src="" id="letter2" class="draggable">
-                <img src="" id="letter3" class="draggable">
-                <img src="" id="letter4" class="draggable">
-                <img src="" id="letter5" class="draggable">
-                <img src="" id="letter6" class="draggable">
-                <img src="" id="letter7" class="draggable">
+                <img src="img/transparent.png" id="letter1" class="draggable">
+                <img src="img/transparent.png" id="letter2" class="draggable">
+                <img src="img/transparent.png" id="letter3" class="draggable">
+                <img src="img/transparent.png" id="letter4" class="draggable">
+                <img src="img/transparent.png" id="letter5" class="draggable">
+                <img src="img/transparent.png" id="letter6" class="draggable">
+                <img src="img/transparent.png" id="letter7" class="draggable">
             </div>
         </div>
 
@@ -93,5 +93,12 @@ Purpose: Provide basic structure for the website and Scrabble game.
 
         <!--Includes jQuery UI Interactions for Drag and Drop>-->
         <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        
+        <script>
+            $(document).ready(function() {
+                random_tiles();
+                droppable_slots();
+            });
+        </script>
     </body>
 </html>

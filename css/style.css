@@ -50,13 +50,39 @@ h2 {
 .game_board {
     margin-left: 15%;
     margin-right: 15%;
+    margin-bottom: 15px;
 }
+
+.game_buttons {
+    margin-left: 32%;
+    margin-right: 25%;
+}
+
+.game_buttons input[type="button"] {
+    color: #8143aa;
+    background-color: #f9e0ab;
+    font-weight: bold;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 20px;
+}
+
 .tile_rack {
     background-image: url("../img/rack.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 800px;
+    background-size: 640px;
+    margin-top: 30px;
     margin: auto;
     height: 182px;
-    /*width: 640px;*/
+    width: 640px;
+}
+
+.tile_rack img {
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+#letter1 {
+    margin-left: 5%;
 }
